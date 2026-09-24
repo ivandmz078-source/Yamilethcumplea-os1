@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Yamileth · 4 de octubre</title>
+  <meta name="theme-color" content="#FFF8EC" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Partículas decorativas y lluvia de tulipanes (la genera script.js) -->
+  <div class="particles" id="particles" aria-hidden="true"></div>
+  <div class="rain" id="rain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="logo" href="#inicio">
+      <span class="logo-mark" data-tulip="#FF8FB1"></span>Yamileth
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#cuenta" id="navCuenta">Cuenta regresiva</a>
+      <a href="#frase">Frase del día</a>
+      <a href="#personajes">La pandilla</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-text reveal">
+          <p class="label" id="heroLabel"></p>
+          <h1 id="heroTitle">Para Yamileth, con todo mi amor.</h1>
+          <p class="lead" id="heroLead"></p>
+          <a class="btn" href="#frase" id="heroBtn">Ver mi frase de hoy</a>
+        </div>
+        <div class="hero-visual reveal">
+          <div id="heroSnoopy"></div>
+          <div class="hero-woodstock" id="heroWoodstock"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section class="band band-sky" id="cuenta">
+      <div class="wrap">
+        <p class="label reveal" id="cdDate"></p>
+        <h2 class="reveal">Cada segundo me acerca a tu día.</h2>
+        <div class="count reveal" role="timer" aria-live="off">
+          <div><span id="cd-d">00</span><small>días</small></div>
+          <div><span id="cd-h">00</span><small>horas</small></div>
+          <div><span id="cd-m">00</span><small>minutos</small></div>
+          <div><span id="cd-s">00</span><small>segundos</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUMPLEAÑOS (solo visible el 4 de octubre) -->
+    <section class="band band-pink" id="cumple" hidden>
+      <div class="wrap bday-grid">
+        <div class="bday-text">
+          <p class="label">4 de octubre</p>
+          <h2>¡Feliz cumpleaños, Yamileth!</h2>
+          <p class="lead">
+            Hoy el mundo es más bonito porque naciste tú. Gracias por cada risa,
+            por cada abrazo y por ser mi lugar favorito.
+          </p>
+          <p class="lead">
+            Que este nuevo año de vida se llene de tulipanes, de días suaves y de
+            todo lo que sueñas. Te amo hoy, mañana y siempre.
+          </p>
+          <p class="sign">Con todo mi amor 💛</p>
+        </div>
+        <div class="bday-visual">
+          <div id="bdaySnoopy"></div>
+          <div class="bouquet" id="bouquet"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRASE DEL DÍA -->
+    <section class="phrase" id="frase">
+      <div class="wrap">
+        <div class="day-char reveal">
+          <div id="dayChar"></div>
+          <div>
+            <p class="label" id="phraseDate"></p>
+            <p class="who" id="phraseWho"></p>
+          </div>
+        </div>
+        <blockquote id="phraseText" class="phrase-text"></blockquote>
+        <div class="phrase-tulip" id="phraseTulip"></div>
+      </div>
+    </section>
+
+    <!-- PERSONAJES -->
+    <section class="band band-sun" id="personajes">
+      <div class="wrap">
+        <p class="label reveal">La pandilla completa</p>
+        <h2 class="reveal">Toda la pandilla te manda un abrazo.</h2>
+        <div class="char-grid" id="charGrid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span class="logo-mark" data-tulip="#F0574F"></span>
+      <p>Hecho con mucho amor para Yamileth.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
