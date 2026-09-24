@@ -1,0 +1,359 @@
+/* ============================================================
+   Estilo inspirado en Dala, en versión clara y amigable
+   ============================================================ */
+:root {
+  --cream: #FFF8EC;
+  --sky: #DDF1FB;
+  --pink-soft: #FFE3EC;
+  --sun-soft: #FFF1BF;
+  --ink: #2B2A4C;
+  --ink-soft: #6A6890;
+  --gold-ink: #B57A00;
+  --coral: #F0574F;
+  --leaf: #4FAF83;
+
+  --font: 'Inter', 'PPNeueMontreal', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --max: 1280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+main, .nav, .footer { position: relative; z-index: 1; }
+
+/* ---------- Tipografía ---------- */
+h1, h2, h3 { font-weight: 400; }
+
+h1 {
+  font-size: clamp(46px, 9.4vw, 113px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+h2 {
+  font-size: clamp(38px, 6.2vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--gold-ink);
+  margin-bottom: 18px;
+}
+
+.lead {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 200;
+  max-width: 520px;
+  margin: 24px 0 36px;
+}
+
+/* ---------- Botón (único pill relleno) ---------- */
+.btn {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  padding: 14.4px 24px;
+  border-radius: 22.5px;
+  transition: transform .2s ease;
+}
+.btn:hover { transform: translateY(-3px) scale(1.03); }
+
+/* ---------- Navegación ---------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 24px clamp(20px, 4vw, 48px);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo-mark svg { height: 30px; width: auto; display: block; }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 24px 0 96px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 60px;
+}
+.hero-visual { position: relative; display: flex; justify-content: center; }
+.hero-woodstock {
+  position: absolute;
+  left: 2%;
+  bottom: 2%;
+  animation: hop 3.2s ease-in-out infinite;
+}
+
+/* ---------- Bandas de color plano ---------- */
+.band { padding: 96px 0 120px; }
+.band-sky  { background: var(--sky); }
+.band-pink { background: var(--pink-soft); }
+.band-sun  { background: var(--sun-soft); }
+
+/* ---------- Cuenta regresiva ---------- */
+.count {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.count span {
+  display: block;
+  font-size: clamp(44px, 10vw, 132px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.count small {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--ink-soft);
+}
+
+/* ---------- Cumpleaños ---------- */
+.bday-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 60px;
+}
+.bday-grid .lead { margin: 24px 0 0; }
+.sign { margin-top: 30px; font-size: 27px; font-weight: 400; letter-spacing: -0.02em; }
+.bday-visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.bday-visual #bdaySnoopy { margin-right: -36px; position: relative; z-index: 2; }
+.bouquet svg {
+  display: block;
+  width: min(440px, 86vw);
+  height: auto;
+  transform-origin: 50% 92%;
+  animation: bloom 1.2s cubic-bezier(.2, .9, .3, 1.2) both,
+             sway 6s ease-in-out 1.2s infinite alternate;
+}
+
+/* ---------- Frase del día ---------- */
+.phrase { padding: 96px 0 120px; }
+.day-char { display: flex; align-items: center; gap: 18px; margin-bottom: 36px; }
+.day-char .label { margin-bottom: 4px; }
+.who { font-size: 18px; font-weight: 300; color: var(--ink-soft); }
+.who b { font-weight: 600; color: var(--ink); }
+
+.phrase-text {
+  font-size: clamp(30px, 4.8vw, 62px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+  max-width: 1000px;
+  transition: opacity .5s ease, transform .5s ease;
+}
+.phrase-text.fade { opacity: 0; transform: translateY(12px); }
+
+.phrase-tulip { margin-top: 48px; }
+.phrase-tulip svg {
+  height: 170px;
+  width: auto;
+  transform-origin: 50% 100%;
+  animation: sway 5s ease-in-out infinite alternate;
+}
+
+/* ---------- Personajes ---------- */
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 60px 30px;
+  margin-top: 60px;
+}
+.char-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+.char-item .char { transition: transform .3s ease; }
+.char-item:hover .char { transform: translateY(-10px) rotate(-3deg); }
+.char-item h3 { font-size: 27px; line-height: 1; letter-spacing: -0.02em; }
+.char-item p { font-size: 16px; font-weight: 300; color: var(--ink-soft); max-width: 240px; }
+
+/* ---------- Componente personaje (con respaldo si falta la imagen) ---------- */
+.char {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg, var(--sky));
+  flex-shrink: 0;
+}
+.char img {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+.char .ph {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px;
+  text-align: center;
+  color: var(--ink);
+  opacity: .55;
+}
+.char .ph b { font-weight: 400; letter-spacing: -0.04em; line-height: 1; }
+.char .ph small { font-size: 11px; font-weight: 400; word-break: break-all; }
+.char.missing img { display: none; }
+.char.missing .ph { display: flex; }
+
+.char-xl { width: min(440px, 80vw); aspect-ratio: 1; }
+.char-xl .ph b { font-size: 110px; }
+.char-lg { width: 200px; aspect-ratio: 1; }
+.char-lg .ph b { font-size: 64px; }
+.char-bd { width: 300px; aspect-ratio: 1; }
+.char-bd .ph b { font-size: 80px; }
+.char-md { width: 96px; aspect-ratio: 1; }
+.char-md .ph b { font-size: 40px; }
+.char-md .ph small { display: none; }
+.char-sm { width: 130px; aspect-ratio: 1; }
+.char-sm .ph b { font-size: 44px; }
+.char-sm .ph small { display: none; }
+
+/* ---------- Pie ---------- */
+.footer { padding: 60px 0 72px; text-align: center; }
+.footer .wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.footer p { font-size: 15px; font-weight: 300; color: var(--ink-soft); }
+
+/* ---------- Partículas de fondo ---------- */
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particles .p {
+  position: absolute;
+  opacity: .5;
+  animation: drift ease-in-out infinite alternate;
+}
+.particles .p svg { display: block; width: 100%; height: 100%; }
+
+/* ---------- Lluvia de tulipanes ---------- */
+.rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+.drop {
+  position: absolute;
+  top: -80px;
+  animation: fall linear infinite;
+}
+.drop svg { display: block; width: 100%; height: auto; }
+
+/* ---------- Aparición al hacer scroll ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Animaciones ---------- */
+@keyframes drift {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to   { transform: translate(14px, -28px) rotate(28deg); }
+}
+@keyframes sway {
+  from { transform: rotate(-2deg); }
+  to   { transform: rotate(2deg); }
+}
+@keyframes bloom {
+  from { transform: scale(.6); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes hop {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50%      { transform: translateY(-14px) rotate(4deg); }
+}
+@keyframes fall {
+  from { transform: translateY(-12vh) rotate(-18deg); }
+  to   { transform: translateY(118vh) rotate(24deg); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .hero-grid, .bday-grid { grid-template-columns: 1fr; gap: 48px; }
+  .count { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+  .bday-visual { flex-direction: column; align-items: center; }
+  .bday-visual #bdaySnoopy { margin: 0 0 -30px; }
+  .char-bd { width: 240px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
